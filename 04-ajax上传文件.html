@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>    
+    <form id="form1">
+       用户昵称:  <input type="text" name="nickName"> <br>
+       用户头像:  <input type="file" name="file"> <br>
+        <input type="button" value="上传" onclick="ajaxUpload()">
+    </form>
+
+    <script>
+        function ajaxUpload(){
+            var xhr = new XMLHttpRequest();
+            xhr.open("post","./php/saveFiles.php");
+            xhr.onload =function(){
+                if(xhr.status == 200){
+                    console.log(xhr.responseText);
+                }
+            };
+            //将一个form表单中的数据序列化成1个FormData对象.
+            var formData = new FormData(document.getElementById("form1"));
+            xhr.send(formData);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <hr>
+    <!--
+    伪单页应用
+
+    -->
+    <button onclick="home()">首页</button> <button onclick="upload()">上传</button>
+    <hr>
+    <iframe id="if1" src="./home.html" frameborder="0"></iframe>
+
+    <script>
+        function home() {
+            document.getElementById("if1").src = "./home.html"
+        }
+
+        function upload() {
+            document.getElementById("if1").src = "./04-ajax上传文件.html"
+        }
+    </script>
+</body>
+
+</html>
